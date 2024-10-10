@@ -34,7 +34,7 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
    - **Średni**: Wyzwanie stopniowo rośnie – zagadki stają się bardziej złożone, a liczba przeciwników zwiększa się.
    - **Trudny**: Zaawansowane mechaniki fizyczne, złożone interakcje między elementami gry.
 
-   **TECHNICZNE ASPEKTY**
+**TECHNICZNE ASPEKTY**
    - Gra wykonana będzie w programie Unity przy pomocy języka C#.
    - Do gry będą implementowane darmowe Assety z różnych źródeł (Dźwięk, Grafika).
 
