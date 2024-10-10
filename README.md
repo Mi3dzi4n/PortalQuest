@@ -71,9 +71,9 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
    - **Testy**: Testowanie gry pod kątem fizyki, błędów w poziomach i balansu trudności.
    - **Optymalizacja**: Optymalizacja grafiki i mechanik gry pod kątem płynności działania.
 
-**MOŻLIWOŚĆ ROZBUDOWY W PRZYSZŁOŚCI (PO ZAKOŃCZENIU PROJEKTU)**
+### **MOŻLIWOŚĆ ROZBUDOWY W PRZYSZŁOŚCI (PO ZAKOŃCZENIU PROJEKTU)**
 - Dodanie multiplayera w trybie kooperacyjnym, gdzie gracze współpracują przy rozwiązywaniu zagadek.
 - Integracja z usługami sieciowymi do śledzenia statystyk i wyników graczy.
 
-**PREZENTACJA**
+**PREZENTACJA**- 
 Zaprezentowanie gry odbędzie się poprzez stworzenie paru minutowego traileru gry, w którym pokazane będą aspekty fizyczno/logiczne gry, estetyka poziomów, wygląd menu oraz krótkie urywki z gameplayu na różnych poziomach. Całości towarzyszyć będzie podkład muzyczny.
