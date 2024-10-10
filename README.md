@@ -33,3 +33,21 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
    - **Łatwy**: Mniejsze zagęszczenie pułapek, zagadki fizyczne proste, z wyraźnymi wskazówkami.
    - **Średni**: Wyzwanie stopniowo rośnie – zagadki stają się bardziej złożone, a liczba przeciwników zwiększa się.
    - **Trudny**: Zaawansowane mechaniki fizyczne, złożone interakcje między elementami gry.
+
+   **TECHNICZNE ASPEKTY**
+   - Gra wykonana będzie w programie Unity przy pomocy języka C#.
+   - Do gry będą implementowane darmowe Assety z różnych źródeł (Dźwięk, Grafika).
+
+1. **Grafika**:
+   - **Styl graficzny**: Prostota, pixel art lub grafika rysunkowa w stylu kreskówkowym.
+   - **Tła**: Statyczne tła dostosowane do tematyki poziomu (np. las, jaskinia, miasto, fabryka).
+   - **Animacje postaci**: Płynne animacje skoku, biegu, interakcji z obiektami.
+
+2. **Fizyka**:
+   - Silnik gry wykorzystuje wbudowany system fizyki Unity do symulowania grawitacji, tarcia, sił działających na obiekty.
+   - **Obiekty interaktywne** mają swoją masę i mogą być przesuwane lub popychane przez gracza, co wpływa na ich ruch i pozycję.
+
+3. **Wyzwania i poziomy**:
+   - Każdy poziom może mieć unikalny zestaw zagadek, które wymagają logicznego myślenia i zręczności.
+   - **Cele poziomów**: Zbierz określoną liczbę monet, znajdź wyjście, rozwiąż zagadki, pokonaj przeciwników lub kombinacja tych elementów.
+   - **Różnorodność środowisk**: Różne motywy poziomów, jak lasy, podziemia, fabryki z wieloma ruchomymi mechanizmami, co utrzymuje rozgrywkę świeżą i angażującą.
