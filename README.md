@@ -6,7 +6,7 @@ Projekt 3a Gra w Unity - Miedzianowski, Szcześniewski, Kubiak, Jakubowski
 **GŁÓWNA KONCEPCJA** -
 Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc przez różne poziomy pełne zagadek fizycznych i przeszkód. Głównym celem jest dotarcie do końca poziomu, rozwiązując łamigłówki oparte na zasadach fizyki, zbierając monety/punkty oraz unikając pułapek i przeciwników. W grze można manipulować obiektami, które reagują zgodnie z zasadami fizyki, np. przesuwać skrzynie, podnosić dźwignie, czy korzystać z platform, które działają na zasadzie równowagi.
 
-**ROZGRYWKA:**
+### **ROZGRYWKA:**
 1. **Sterowanie**:
    - **Poruszanie się**: Gracz steruje postacią za pomocą przycisków *asd* oraz/lub *strzałek*
    - **Skok**: *Spacja* oraz/lub *strzałka w górę*
@@ -34,7 +34,7 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
    - **Średni**: Wyzwanie stopniowo rośnie – zagadki stają się bardziej złożone, a liczba przeciwników zwiększa się.
    - **Trudny**: Zaawansowane mechaniki fizyczne, złożone interakcje między elementami gry.
 
-**TECHNICZNE ASPEKTY**
+### **TECHNICZNE ASPEKTY:**
    - Gra wykonana będzie w programie Unity przy pomocy języka C#.
    - Do gry będą implementowane darmowe Assety z różnych źródeł (Dźwięk, Grafika).
 
@@ -51,3 +51,22 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
    - Każdy poziom może mieć unikalny zestaw zagadek, które wymagają logicznego myślenia i zręczności.
    - **Cele poziomów**: Zbierz określoną liczbę monet, znajdź wyjście, rozwiąż zagadki, pokonaj przeciwników lub kombinacja tych elementów.
    - **Różnorodność środowisk**: Różne motywy poziomów, jak lasy, podziemia, fabryki z wieloma ruchomymi mechanizmami, co utrzymuje rozgrywkę świeżą i angażującą.
+
+### **ROZWÓJ GRY:**
+1. **Pierwsze etapy**:
+   - **Prototyp poziomu**: Stworzenie prostego poziomu z podstawowymi zagadkami fizycznymi i mechanikami skakania. (Poziom trudności: Łatwy)
+   - **Dodanie systemu monet**: Wprowadzenie systemu punktacji i animacji zbierania monet.
+   - **Prosta fizyka**: Implementacja skrzyń i dźwigni, które gracz może przemieszczać.
+   - **Proste Menu**: Dodanie prostego Menu pozwalającego poruszać się między poziomami.
+
+2. **Rozbudowa**:
+   - **Kolejne poziomy**: Tworzenie bardziej skomplikowanych poziomów z unikalnymi zagadkami. (Poziom trudności: Średni)
+   - **Dodanie przeciwników**: Implementacja wrogów, z którymi gracz musi się zmierzyć.
+   - **Dodanie muzyki**: Dodanie dynamicznej muzyki do poziomów, oraz efektów dźwiękowych podczas interakcji z otoczeniem (skok, poruszanie się, przesuwanie).
+   - **Menu**: Ulepszenie Menu gry, dodanie sklepu oraz funkcjonalności waluty w grze tzn. kupowania skórek postaci w sklepie.
+
+3. **Finalizacja**:
+   - **Ostatnie poziomy**: Zaimplementowanie paru bardzo wymagających poziomów do gry. (Poziom trudności: Trudny)
+   - **Logo**: Stworzenie tematycznego loga gry.
+   - **Testy**: Testowanie gry pod kątem fizyki, błędów w poziomach i balansu trudności.
+   - **Optymalizacja**: Optymalizacja grafiki i mechanik gry pod kątem płynności działania
