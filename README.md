@@ -36,7 +36,7 @@ Gracz kontroluje postać w klasycznym, dwuwymiarowym świecie, przechodząc prze
 
 ### **TECHNICZNE ASPEKTY:**
    - Gra wykonana będzie w programie Unity przy pomocy języka C#.
-   - Do gry będą implementowane darmowe Assety z różnych źródeł (Dźwięk, Grafika).
+   - Do gry będą implementowane płatne oraz darmowe Assety z różnych źródeł (Dźwięk, Grafika).
 
 1. **Grafika**:
    - **Styl graficzny**: Prostota, pixel art lub grafika rysunkowa w stylu kreskówkowym.
