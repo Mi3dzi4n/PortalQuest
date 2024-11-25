@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 4c682e8c6b25d1d4d86157bc50f68b80
+guid: 1f4fb75968957ca40b64fb0135c4b3a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6474817916930609645
-    second: Punk_idle_0
+      213: -2564383168423420662
+    second: Punk_hurt_0
+  - first:
+      213: -7400074292645236167
+    second: Punk_hurt_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_idle_0
+      name: Punk_hurt_0
       rect:
         serializedVersion: 2
         x: 4
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de1dbf3279c2bd950800000000000000
-      internalID: 6474817916930609645
+      spriteID: a0d9122581b796cd0800000000000000
+      internalID: -2564383168423420662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Punk_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932716b53a7ad4990800000000000000
+      internalID: -7400074292645236167
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Punk_idle_0: 6474817916930609645
+      Punk_hurt_0: -2564383168423420662
+      Punk_hurt_1: -7400074292645236167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public Vector2 BoxSize;
     public float castDistance;
     public LayerMask groundLayer;
+    public Animator animator;
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
 
@@ -23,7 +24,8 @@ public class PlayerMove : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
+
         // Sprawdzanie skoku, tylko jeœli gracz jest na ziemi
         if (isGrounded() && Input.GetKey(KeyCode.Space))
         {
