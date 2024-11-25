@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Attack_dust_0: -330152335402623830
+      Attack_dust_1: 3914499136093508721
+      Attack_dust_10: -7260577483335307156
+      Attack_dust_2: -2534090401642803890
+      Attack_dust_3: -3261840103429178494
+      Attack_dust_4: 637903765012229990
+      Attack_dust_5: -7386345550637595996
+      Attack_dust_6: 5083338885639916521
+      Attack_dust_7: -2737777865043966347
+      Attack_dust_8: -5090723823038870158
+      Attack_dust_9: -6287733923812419683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

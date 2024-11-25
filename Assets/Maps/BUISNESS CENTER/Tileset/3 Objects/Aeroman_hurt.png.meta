@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Aeroman_hurt_0: 2320651080238182346
+      Aeroman_hurt_1: -5595139063356372750
+      Aeroman_hurt_2: -3716486556764202930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

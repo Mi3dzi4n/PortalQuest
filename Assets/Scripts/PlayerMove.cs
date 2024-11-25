@@ -4,27 +4,28 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
-    public Transform groundCheck;
-    public float groundCheckRadius;
-    public LayerMask Ground;
-    [SerializeField] private bool grounded;
+    bool grounded;
+    public Vector2 BoxSize;
+    public float castDistance;
+    public LayerMask groundLayer;
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // Pobierz komponent Rigidbody2D tylko raz
+
     }
 
     void FixedUpdate()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, Ground); // SprawdŸ, czy gracz jest na ziemi
+        
     }
 
     void Update()
     {
         // Sprawdzanie skoku, tylko jeœli gracz jest na ziemi
-        if (grounded && Input.GetKey(KeyCode.Space))
+        if (isGrounded() && Input.GetKey(KeyCode.Space))
         {
             // Skok, zachowuj¹c prêdkoœæ w osi X
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
@@ -48,4 +49,39 @@ public class PlayerMove : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
     }
+    public bool isGrounded()
+    {
+        if (Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistance, BoxSize);
+    }
+
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Ground"))
+    //    {
+
+    //        {
+    //            grounded = true;
+    //        }
+
+    //    }
+    //}
+    //private void OnCollisionExit2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Ground"))
+    //    {
+    //        grounded = false;
+    //    }
+    //}   
 }

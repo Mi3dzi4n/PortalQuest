@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crosswalk4_0: -4187379612833817970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

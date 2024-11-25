@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vending_machine2_0: 51850484416257023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

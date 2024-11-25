@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Garland4_0: -3369838654044834447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

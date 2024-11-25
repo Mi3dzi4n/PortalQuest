@@ -984,7 +984,42 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ModularFarm_0: 1728246050560168918
+      ModularFarm_1: -5031301041532736535
+      ModularFarm_10: 5982525494440628659
+      ModularFarm_11: -4642487271020165999
+      ModularFarm_12: -7210474859683610547
+      ModularFarm_13: 2718946353809949323
+      ModularFarm_14: 2390569744691678101
+      ModularFarm_15: -6083969039548266161
+      ModularFarm_16: 3068352971666128470
+      ModularFarm_17: 7935433737930956788
+      ModularFarm_18: -4269762793747725712
+      ModularFarm_19: 115650502821161382
+      ModularFarm_2: -826196055615710344
+      ModularFarm_20: 4547391743021852326
+      ModularFarm_21: 5829370458145331403
+      ModularFarm_22: -8722591620836604203
+      ModularFarm_23: -691608803206327485
+      ModularFarm_24: 8465793585516446610
+      ModularFarm_25: -8154374746696874889
+      ModularFarm_26: -8895036359098223794
+      ModularFarm_27: 2802647598256657875
+      ModularFarm_28: 2875232308621557466
+      ModularFarm_29: 2011826858391319562
+      ModularFarm_3: -2439809891260884689
+      ModularFarm_30: 1657580164619942836
+      ModularFarm_31: -859570736308565706
+      ModularFarm_32: 7873383443172205128
+      ModularFarm_33: 5047277603304525179
+      ModularFarm_34: 7380251787519511423
+      ModularFarm_4: 1188173081364387878
+      ModularFarm_5: -4195071541464556798
+      ModularFarm_6: -9155905045871395279
+      ModularFarm_7: -8724036686647013531
+      ModularFarm_8: 1887069145985579021
+      ModularFarm_9: -2769046993254425969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

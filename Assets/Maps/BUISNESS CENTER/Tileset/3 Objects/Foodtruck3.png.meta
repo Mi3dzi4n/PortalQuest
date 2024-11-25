@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Foodtruck3_0: -6348163895105570365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

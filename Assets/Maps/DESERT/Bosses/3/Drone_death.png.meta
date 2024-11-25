@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Drone_death_0: 4607573521590509
+      Drone_death_1: -3513266070856794532
+      Drone_death_10: 2679307055309338941
+      Drone_death_2: -3392733431275312609
+      Drone_death_3: -8539242649323881652
+      Drone_death_4: 71999616607259763
+      Drone_death_5: 1499035141893910921
+      Drone_death_6: 3594381945545493200
+      Drone_death_7: -6892666037950760851
+      Drone_death_8: 2708693907188205254
+      Drone_death_9: -5459252872357085093
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

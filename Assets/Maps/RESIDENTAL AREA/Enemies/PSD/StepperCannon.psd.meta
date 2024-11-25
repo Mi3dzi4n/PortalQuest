@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StepperCannon_0: -167938027112305705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

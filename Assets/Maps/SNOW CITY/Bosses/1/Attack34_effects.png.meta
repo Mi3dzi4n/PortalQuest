@@ -434,7 +434,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Attack34_effects_0: 7306665957141808231
+      Attack34_effects_1: -2476033912447626442
+      Attack34_effects_10: 8453547070454455043
+      Attack34_effects_11: 5241449961263224321
+      Attack34_effects_12: 9151085639302975792
+      Attack34_effects_2: 4452974577222250609
+      Attack34_effects_3: -8747588637375495789
+      Attack34_effects_4: -8805453796280905516
+      Attack34_effects_5: -2320420427178012122
+      Attack34_effects_6: 4352648790030041965
+      Attack34_effects_7: 8547075800679613540
+      Attack34_effects_8: -2788073996487203754
+      Attack34_effects_9: -7456468063827428193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

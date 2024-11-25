@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cactus18_0: -1633947453439642003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sneer_0: -4246338959339194671
+      Sneer_1: 3897317963870328521
+      Sneer_10: 2789365517737018854
+      Sneer_11: 1173434191095438215
+      Sneer_2: 151017646606109358
+      Sneer_3: -122005224433013089
+      Sneer_4: -2709505312118918333
+      Sneer_5: -7629660531968877437
+      Sneer_6: -1131500622981683685
+      Sneer_7: 1258167802168728903
+      Sneer_8: 1500399273689212138
+      Sneer_9: 8945902606227609114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

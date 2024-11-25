@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Terminal3_0: -1766232842991805426
+      Terminal3_1: 1262003490538479670
+      Terminal3_2: 3404453303022038783
+      Terminal3_3: 1173110491226594593
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

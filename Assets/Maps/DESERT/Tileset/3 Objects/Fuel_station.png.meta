@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fuel_station_0: -8450514394225658315
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CyberBike_0: -5290140816017426334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
