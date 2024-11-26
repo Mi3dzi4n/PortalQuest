@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     public Vector2 BoxSize;
     public float castDistance;
     public LayerMask groundLayer;
-    public Animator animator;
+    
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
 
@@ -18,16 +18,13 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    void FixedUpdate()
-    {
-        
-    }
+ 
 
-    void Update()
+    void FixedUpdate()
     { 
 
         // Sprawdzanie skoku, tylko jeœli gracz jest na ziemi
-        if (isGrounded() && Input.GetKey(KeyCode.Space))
+        if (IsGrounded() && Input.GetKey(KeyCode.Space))
         {
             // Skok, zachowuj¹c prêdkoœæ w osi X
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
@@ -51,7 +48,7 @@ public class PlayerMove : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
     }
-    public bool isGrounded()
+    public bool IsGrounded()
     {
         if (Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer))
         {

@@ -21,7 +21,7 @@ public class Player_Move : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (IsGrounded() && Input.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetBool("IsJumping", true);
@@ -45,7 +45,7 @@ public class Player_Move : MonoBehaviour
         jump = false;
     }
 
-    public bool isGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer);
     }
