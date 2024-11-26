@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpHeight: 10
+  jumpHeight: 20
   BoxSize: {x: 0, y: 0}
   castDistance: 0
   groundLayer:
