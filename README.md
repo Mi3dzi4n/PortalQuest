@@ -1,5 +1,4 @@
 # PortalQuest
-**Projekt 3a Gra w Unity** - Miedzianowski, Szcześniewski, Kubiak, Jakubowski
 
 ### GRA KOMPUTEROWA - **Platformówka 2D z Elementami Fizycznymi**
 
