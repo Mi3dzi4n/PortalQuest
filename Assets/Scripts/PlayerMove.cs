@@ -10,10 +10,12 @@ public class PlayerMove : MonoBehaviour
     public Vector2 BoxSize;
     public float castDistance;
     public LayerMask groundLayer;
+    public LayerMask ladderLayer;
     public Animator animator;
     float horizontalMove = 0f;
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
+    private bool IsLadder = false;
 
     void Start()
     {
@@ -27,6 +29,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     public bool IsGrounded()
     {
+        if (IsLadder)
+        {
+            return false;
+        }
+
         if (Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer))
         {
             animator.SetBool("IsJumping", false);
@@ -110,6 +117,21 @@ public class PlayerMove : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            IsLadder = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            IsLadder = false;
+            
+        }
     }
 
     //private void OnCollisionEnter2D(Collision2D other)

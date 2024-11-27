@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - TeleportTrigger
+  - Ladder
   layers:
   - Default
   - TransparentFX
