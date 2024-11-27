@@ -4472,7 +4472,7 @@ Animator:
   m_GameObject: {fileID: 1064420050}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0220c0d27155dff44b4ea4abddad1e61, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8f454f60356adad469a8bcd1805de009, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -128509,11 +128509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217176582592814122, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -158.8772
+      value: -158.95
       objectReference: {fileID: 0}
     - target: {fileID: 1217176582592814122, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.8099995
+      value: -3.82
       objectReference: {fileID: 0}
     - target: {fileID: 1217176582592814122, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128560,6 +128560,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4098944582640312511, guid: c31297d353def0a4892f126f44b76e33, type: 3}
+      propertyPath: check
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098944582640312511, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1064420065}
@@ -128581,7 +128585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098944582640312511, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: jumpHeight
-      value: 12
+      value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: 4098944582640312511, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: groundCheck
@@ -128601,7 +128605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098944582640312511, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 128
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 5944520026900015974, guid: c31297d353def0a4892f126f44b76e33, type: 3}
       propertyPath: m_Constraints
