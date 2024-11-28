@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
-public class PlayerMove : MonoBehaviour
+public class Movetest : MonoBehaviour
 {
     public float moveSpeed = 40f;
     public float jumpHeight;
