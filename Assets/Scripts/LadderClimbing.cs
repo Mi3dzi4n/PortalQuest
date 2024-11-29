@@ -7,7 +7,7 @@ public class LadderClimbing : MonoBehaviour
     private float speed = 12f;
     private bool IsLadder;
     private bool IsClimbing;
-
+    public Animator animator;
 
     [SerializeField] private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +29,7 @@ public class LadderClimbing : MonoBehaviour
 
             rb.gravityScale = 0f;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, vertical * speed);
+
         }
         else
         {

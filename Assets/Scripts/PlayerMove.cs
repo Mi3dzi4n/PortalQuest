@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
             return true;
         }
         else
-        {
+        { 
             return false;
         }
     }
@@ -111,6 +111,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = true;
+            animator.SetBool("IsClimbing", true);
         }
     }
 
@@ -119,6 +120,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = false;
+            animator.SetBool("IsClimbing", false);
         }
     }
 }
