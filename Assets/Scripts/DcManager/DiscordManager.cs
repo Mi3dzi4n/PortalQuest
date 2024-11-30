@@ -6,11 +6,14 @@ using System;
 
 public class DiscordManager : MonoBehaviour
 {
+    // Inicjalizujemy Discorda tylko dla wersji Standalone (PC/Mac)
+#if UNITY_STANDALONE
     Discord.Discord discord;
-
     private long sharedStartTime;
+#endif
 
     public static DiscordManager Instance { get; private set; }
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,6 +28,8 @@ public class DiscordManager : MonoBehaviour
 
     void Start()
     {
+        // Tylko dla wersji Standalone
+#if UNITY_STANDALONE
         if (sharedStartTime == 0)
         {
             sharedStartTime = DateTimeOffset.Now.ToUnixTimeSeconds();
@@ -33,21 +38,30 @@ public class DiscordManager : MonoBehaviour
         discord = new Discord.Discord(1311338738517016657, (ulong)Discord.CreateFlags.NoRequireDiscord);
         SceneManager.sceneLoaded += OnSceneLoaded;
         ChangeActivity(SceneManager.GetActiveScene().name);
+#endif
     }
 
     void OnDisable()
     {
+        // Tylko dla wersji Standalone
+#if UNITY_STANDALONE
         discord.Dispose();
         SceneManager.sceneLoaded -= OnSceneLoaded;
+#endif
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Tylko dla wersji Standalone
+#if UNITY_STANDALONE
         ChangeActivity(scene.name);
+#endif
     }
 
     public void ChangeActivity(string sceneName)
     {
+        // Tylko dla wersji Standalone
+#if UNITY_STANDALONE
         var activityManager = discord.GetActivityManager();
         var activity = new Discord.Activity();
         switch (sceneName)
@@ -86,7 +100,7 @@ public class DiscordManager : MonoBehaviour
                 };
                 break;
 
-            case "Level1": //Esclusion Zone
+            case "Level1": //Exclusion Zone
                 activity = new Discord.Activity()
                 {
                     State = "Playing Solo",
@@ -115,11 +129,14 @@ public class DiscordManager : MonoBehaviour
                 Debug.LogError("Failed to update activity: " + res);
             }
         });
+#endif
     }
 
     void Update()
     {
-
+        // Tylko dla wersji Standalone
+#if UNITY_STANDALONE
         discord.RunCallbacks();
+#endif
     }
 }
