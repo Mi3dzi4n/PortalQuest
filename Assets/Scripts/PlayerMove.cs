@@ -2,6 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -13,16 +14,16 @@ public class PlayerMove : MonoBehaviour
     public LayerMask ladderLayer;
     public Animator animator;
     float horizontalMove = 0f;
-
-    private Rigidbody2D rb; // Referencja do Rigidbody2D
+    private float vertical;
+    private Rigidbody2D rb; 
     private bool IsLadder = false;
-    private bool facingRight = true; // Czy posta� jest skierowana w prawo?
+    private bool facingRight = true; 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Pobierz komponent Rigidbody2D
+        rb = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
-        animator.SetFloat("Speed", 0f); // Ustaw Speed na 0, aby rozpocz�� animacj� Idle
+        animator.SetFloat("Speed", 0f); 
     }
 
     [SerializeField]
@@ -43,38 +44,51 @@ public class PlayerMove : MonoBehaviour
             return false;
         }
     }
+    
 
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal"); // Odczyt ruchu na osi poziomej (-1, 0, 1)
+        
+        vertical = Input.GetAxis("Vertical");
 
-        // Je�li oba klawisze s� wci�ni�te, zatrzymaj posta�
+        if (IsLadder && Mathf.Abs(vertical) > 0f)
+        {
+
+            animator.SetBool("IsClimbing", true);
+
+        }
+        else
+        {
+            animator.SetBool("IsClimbing", false);
+        }
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
         else if (horizontalMove != 0)
         {
-            // Ruch w lewo lub prawo w zale�no�ci od warto�ci horizontalMove
+            
             rb.linearVelocity = new Vector2(horizontalMove * moveSpeed, rb.linearVelocity.y);
         }
         else
         {
-            // Je�li nic nie jest wci�ni�te, zatrzymaj posta�
+           
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
 
-        // Animacja pr�dko�ci
+       
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove * moveSpeed));
 
-        // Obs�uga odwracania postaci
+        
         FlipCharacter(horizontalMove);
 
-        // Obs�uga skoku
+      
         if (IsGrounded() && Input.GetKey(KeyCode.Space))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
-            animator.SetBool("IsJumping", true);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+                animator.SetBool("IsJumping", true);          
         }
     }
 
@@ -85,7 +99,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FlipCharacter(float horizontal)
     {
-        // Je�li posta� porusza si� w prawo i jest skierowana w lewo, lub odwrotnie, odwr�� j�
+        
         if (horizontal > 0 && !facingRight)
         {
             Flip();
@@ -98,9 +112,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Flip()
     {
-        facingRight = !facingRight; // Prze��cz kierunek postaci
-
-        // Odwr�� posta� przez zmian� skali na osi X
+        facingRight = !facingRight; 
+   
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
@@ -111,7 +124,8 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = true;
-            animator.SetBool("IsClimbing", true);
+            animator.SetBool("IsJumping", false);
+            
         }
     }
 
@@ -120,7 +134,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = false;
-            animator.SetBool("IsClimbing", false);
+          
         }
     }
 }

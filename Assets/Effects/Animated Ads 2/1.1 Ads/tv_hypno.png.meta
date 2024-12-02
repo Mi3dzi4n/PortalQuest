@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tv_hypno_0: 6903466081388004528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

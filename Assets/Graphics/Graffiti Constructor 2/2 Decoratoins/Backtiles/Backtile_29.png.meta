@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Backtile_29_0: -963677350222356469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

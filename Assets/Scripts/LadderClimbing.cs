@@ -19,6 +19,7 @@ public class LadderClimbing : MonoBehaviour
         if (IsLadder && Mathf.Abs(vertical) > 0f)
         {
             IsClimbing = true;
+            
         }
     }
 
@@ -49,6 +50,7 @@ public class LadderClimbing : MonoBehaviour
         {
             IsLadder = false;
             IsClimbing = false;
+            
         }
     }
 }
