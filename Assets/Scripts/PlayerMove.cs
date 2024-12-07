@@ -15,15 +15,16 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
     float horizontalMove = 0f;
     private float vertical;
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
     private bool IsLadder = false;
-    private bool facingRight = true; 
+    private bool facingRight = true;
+    private bool doubleJump;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        animator.SetFloat("Speed", 0f); 
+        animator.SetFloat("Speed", 0f);
     }
 
     [SerializeField]
@@ -40,15 +41,19 @@ public class PlayerMove : MonoBehaviour
             return true;
         }
         else
-        { 
+        {
             return false;
         }
     }
-    
+
 
     void Update()
     {
-        
+        if (IsGrounded())
+        {
+            doubleJump = false;
+        }
+
         vertical = Input.GetAxis("Vertical");
 
         if (IsLadder && Mathf.Abs(vertical) > 0f)
@@ -69,27 +74,33 @@ public class PlayerMove : MonoBehaviour
         }
         else if (horizontalMove != 0)
         {
-            
+
             rb.linearVelocity = new Vector2(horizontalMove * moveSpeed, rb.linearVelocity.y);
         }
         else
         {
-           
+
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
 
-       
+
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove * moveSpeed));
 
-        
+
         FlipCharacter(horizontalMove);
 
-      
         if (IsGrounded() && Input.GetKey(KeyCode.Space))
         {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
-                animator.SetBool("IsJumping", true);          
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            animator.SetBool("IsJumping", true);
         }
+
+        if (!IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            doubleJump = true;
+        }
+
     }
 
     private void OnDrawGizmos()
@@ -99,7 +110,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FlipCharacter(float horizontal)
     {
-        
+
         if (horizontal > 0 && !facingRight)
         {
             Flip();
@@ -112,8 +123,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Flip()
     {
-        facingRight = !facingRight; 
-   
+        facingRight = !facingRight;
+
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
@@ -125,7 +136,7 @@ public class PlayerMove : MonoBehaviour
         {
             IsLadder = true;
             animator.SetBool("IsJumping", false);
-            
+
         }
     }
 
@@ -134,8 +145,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = false;
-          
+
         }
     }
 }
-
