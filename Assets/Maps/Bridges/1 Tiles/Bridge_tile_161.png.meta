@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bridge_tile_161_0: 685990832728011337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
