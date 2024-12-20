@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using Unity.VisualScripting;
-using UnityEngine;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -52,6 +48,7 @@ public class PlayerMove : MonoBehaviour
         if (IsGrounded())
         {
             doubleJump = false;
+            animator.SetBool("isDoubleJumping", false); // Wyłączenie double jumpa po lądowaniu
         }
 
         vertical = Input.GetAxis("Vertical");
@@ -95,16 +92,12 @@ public class PlayerMove : MonoBehaviour
 
         if (!IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight-2);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight - 2);
             doubleJump = true;
-            //Tu wklej setbool na true z animacja double jumpa
+            animator.SetBool("isDoubleJumping", true); // Włączenie animacji double jump
         }
-        if (doubleJump)
-        {
-            animator.SetBool("IsJumping", false);
-        }
-    }
 
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, BoxSize);
