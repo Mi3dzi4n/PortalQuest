@@ -1,12 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     public void Graj()
     {
         SceneManager.LoadSceneAsync(1);
     }
-
     public void Quit()
     {
         Application.Quit();
@@ -43,4 +43,5 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(7);
     }
+    
 }
