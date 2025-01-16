@@ -122,8 +122,8 @@ TextureImporter:
         y: 0
         width: 21
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,8 +144,8 @@ TextureImporter:
         y: 0
         width: 16
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Punk_run_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 101
         y: 0
         width: 22
         height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Punk_run_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 145
         y: 0
         width: 29
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,8 +210,8 @@ TextureImporter:
         y: 0
         width: 17
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,8 +232,8 @@ TextureImporter:
         y: 0
         width: 21
         height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e3a6b3a2b8c756e4f8543d4f1db6e4ea
     internalID: 0
     vertices: []
     indices: 

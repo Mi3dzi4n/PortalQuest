@@ -118,12 +118,12 @@ TextureImporter:
       name: Punk_run_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 3
         y: 0
-        width: 21
-        height: 34
+        width: 19
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Punk_run_1
       rect:
         serializedVersion: 2
-        x: 55
+        x: 56
         y: 0
-        width: 16
-        height: 34
+        width: 14
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Punk_run_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 99
         y: 0
         width: 22
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +189,7 @@ TextureImporter:
         width: 29
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,7 +211,7 @@ TextureImporter:
         width: 17
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,7 +233,7 @@ TextureImporter:
         width: 21
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a16a17e689a90994190906c42bb583e8
     internalID: 0
     vertices: []
     indices: 
