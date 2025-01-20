@@ -7,7 +7,7 @@ public class PatrolEnemy : MonoBehaviour
     public GameObject punktB;
     private Rigidbody2D rb;
     private Transform CurrentPoint;
-    private Animator anim;
+    private Animator animator;
     public float speed;
     public Vector2 BoxSize;
     public float castDistance;
@@ -20,23 +20,22 @@ public class PatrolEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("IsRunning", true);
         CurrentPoint = punktB.transform;
-        //tu dodaj bool od isrunning
-
     }
 
 
     void Update()
     {
-       Vector2 point = CurrentPoint.position - transform.position;
+        Vector2 point = CurrentPoint.position - transform.position;
         if (CurrentPoint == punktB.transform)
         {
             rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
         }
         else
         {
-            rb.linearVelocity = new Vector2 (-speed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
         }
         if (Vector2.Distance(transform.position, CurrentPoint.position) < 1f && CurrentPoint == punktB.transform)
         {
