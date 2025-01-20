@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
+using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     private bool IsLadder = false;
     private bool facingRight = true;
     private bool doubleJump;
+    private bool grand;
 
     void Start()
     {
@@ -28,6 +30,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (IsLadder)
         {
+            
+            animator.SetBool("IsRunning", false);
             animator.SetBool("IsJumping", false);
             return false;
         }
@@ -35,10 +39,12 @@ public class PlayerMove : MonoBehaviour
         if (Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer))
         {
             animator.SetBool("IsJumping", false);
+            grand = true;
             return true;
         }
         else
         {
+            grand = false;
             return false;
         }
     }
@@ -47,6 +53,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (IsGrounded())
         {
+            
             doubleJump = false;
             animator.SetBool("isDoubleJumping", false); // Wyłączenie double jumpa po lądowaniu
         }
@@ -59,6 +66,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            
             animator.SetBool("IsClimbing", false);
         }
 
@@ -88,6 +96,7 @@ public class PlayerMove : MonoBehaviour
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            animator.SetBool("IsJumping", true);
         }
 
         if (!IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
@@ -96,6 +105,10 @@ public class PlayerMove : MonoBehaviour
             doubleJump = true;
             animator.SetBool("isDoubleJumping", true); // Włączenie animacji double jump
         }
+        //if (!IsGrounded() && Input.GetKey(KeyCode.Space))
+        //{
+        //    animator.SetBool("isDoubleJumping", true);
+        //}
 
     }
     private void OnDrawGizmos()
