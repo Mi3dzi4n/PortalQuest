@@ -1,5 +1,4 @@
-﻿using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -10,13 +9,13 @@ public class PlayerMove : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask ladderLayer;
     public Animator animator;
-    float horizontalMove = 0f;
+    private float horizontalMove = 0f;
     private float vertical;
     private Rigidbody2D rb;
     private bool IsLadder = false;
     private bool facingRight = true;
     private bool doubleJump;
-    private bool grand;
+    private bool isFalling;
 
     void Start()
     {
@@ -30,34 +29,30 @@ public class PlayerMove : MonoBehaviour
     {
         if (IsLadder)
         {
-            
-            animator.SetBool("IsRunning", false);
+            animator.SetBool("IsClimbing", true);
             animator.SetBool("IsJumping", false);
             return false;
         }
 
-        if (Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer))
+        bool grounded = Physics2D.BoxCast(transform.position, BoxSize, 0, -transform.up, castDistance, groundLayer);
+        animator.SetBool("IsJumping", !grounded);
+
+        if (grounded)
         {
-            animator.SetBool("IsJumping", false);
-            grand = true;
-            return true;
+            doubleJump = false;
+            animator.SetBool("isDoubleJumping", false);
+            isFalling = false;
         }
-        else
+        else if (rb.linearVelocity.y < 0)
         {
-            grand = false;
-            return false;
+            isFalling = true;
         }
+        return grounded;
     }
 
     void Update()
     {
-        if (IsGrounded())
-        {
-            
-            doubleJump = false;
-            animator.SetBool("isDoubleJumping", false); // Wyłączenie double jumpa po lądowaniu
-        }
-
+        IsGrounded();
         vertical = Input.GetAxis("Vertical");
 
         if (IsLadder && Mathf.Abs(vertical) > 0f)
@@ -66,51 +61,35 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            
             animator.SetBool("IsClimbing", false);
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-        }
-        else if (horizontalMove != 0)
-        {
-            rb.linearVelocity = new Vector2(horizontalMove * moveSpeed, rb.linearVelocity.y);
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-        }
-
+        rb.linearVelocity = new Vector2(horizontalMove * moveSpeed, rb.linearVelocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove * moveSpeed));
-
         FlipCharacter(horizontalMove);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("IsJumping", true);
+            if (IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            }
+            else if (!IsGrounded() && !doubleJump)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight - 2);
+                doubleJump = true;
+                animator.SetBool("isDoubleJumping", true);
+            }
+            else if (isFalling && !doubleJump) // Wykrycie swobodnego spadku
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight - 2);
+                doubleJump = true;
+                animator.SetBool("isDoubleJumping", true);
+            }
         }
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
-            animator.SetBool("IsJumping", true);
-        }
-
-        if (!IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !doubleJump)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight - 2);
-            doubleJump = true;
-            animator.SetBool("isDoubleJumping", true); // Włączenie animacji double jump
-        }
-        //if (!IsGrounded() && Input.GetKey(KeyCode.Space))
-        //{
-        //    animator.SetBool("isDoubleJumping", true);
-        //}
-
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, BoxSize);
@@ -131,7 +110,6 @@ public class PlayerMove : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
@@ -142,6 +120,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = true;
+            animator.SetBool("IsClimbing", true);
             animator.SetBool("IsJumping", false);
         }
     }
@@ -151,6 +130,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             IsLadder = false;
+            animator.SetBool("IsClimbing", false);
         }
     }
 }
