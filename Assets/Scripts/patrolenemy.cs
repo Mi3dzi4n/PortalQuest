@@ -49,12 +49,12 @@ public class PatrolEnemy : MonoBehaviour
         }
         if (Physics2D.BoxCast(transform.position + Vector3.right * offsetX, BoxSize, 0, -transform.up, castDistance, groundLayer))
         {
-            Debug.Log("no");
+            
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         }
         if (Physics2D.BoxCast(transform.position + Vector3.right * offsetX2, BoxSize2, 0, -transform.up, castDistance2, groundLayer))
         {
-            Debug.Log("check");
+            
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         }
 

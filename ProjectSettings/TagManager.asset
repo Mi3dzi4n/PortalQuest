@@ -8,6 +8,7 @@ TagManager:
   - TeleportTrigger
   - Ladder
   - Enemy
+  - enemy
   layers:
   - Default
   - TransparentFX
