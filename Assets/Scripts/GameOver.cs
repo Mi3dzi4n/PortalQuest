@@ -5,12 +5,22 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject GM;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("TeleportTrigger"))
+        
+
+        if (collision.gameObject.CompareTag("TeleportTrigger"))
         {
-            GM.SetActive(true);
-            Time.timeScale = 0;
+            Debug.Log("TeleportTrigger collision!");
+            if (GM != null)
+            {
+                GM.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Debug.LogError("GM is not assigned!");
+            }
         }
     }
 
