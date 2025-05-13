@@ -15,7 +15,7 @@ public class Portal : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Portal"))
         {
-            SceneManager.LoadScene(scene + 1);
+            SceneManager.LoadScene(1);
             Debug.Log("no");
         }
     }
